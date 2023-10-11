@@ -21,9 +21,6 @@ steps:
   displayName: gradlew assembleDebug test
 
 
-
-  
-
 - task: CopyFiles@2
   inputs:
     contents: '**/*.apk'
