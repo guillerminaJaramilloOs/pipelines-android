@@ -9,7 +9,7 @@ pool:
 steps:
 - task: Gradle@2
   inputs:
-    workingDirectory: ''
+    workingDirectory: '$(system.defaultWorkingDirectory)/AndroidApps/MyApp'
     gradleWrapperFile: 'gradlew'
     gradleOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
@@ -23,7 +23,7 @@ steps:
 #se añadio
 - task: Gradle@2
   inputs:
-    workingDirectory: ''
+    workingDirectory: '$(system.defaultWorkingDirectory)/AndroidApps/MyApp'
     gradleWrapperFile: 'gradlew'
     gradleOptions: '-Xmx3072m'
     publishJUnitResults: false
