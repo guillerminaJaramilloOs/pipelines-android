@@ -10,7 +10,7 @@ steps:
 - task: Gradle@2
   inputs:
     workingDirectory: '$(system.defaultWorkingDirectory)'
-    gradleWrapperFile: 'AndroidApps/MyApp/gradlew'
+    gradleWrapperFile: '/gradlew'
     gradleOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
