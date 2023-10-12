@@ -33,3 +33,30 @@ steps:
     artifactName: 'drop'
     artifactType: 'container'
   displayName: Publish artifacts
+
+
+
+#SONARQUBE
+trigger:
+- master # or the name of your main branch
+- feature/*
+
+# Prepare Analysis Configuration task
+- task: SonarQubePrepare@5
+  inputs:
+    SonarQube: 'YourSonarqubeServerEndpoint'
+    scannerMode: 'MSBuild'
+    projectKey: 'YourProjectKey'
+
+# Dotnet build task
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build'
+
+# Run Code Analysis task
+- task: SonarQubeAnalyze@5
+
+# Publish Quality Gate Result task
+- task: SonarQubePublish@5
+  inputs:
+    pollingTimeoutSec: '300'
+  
